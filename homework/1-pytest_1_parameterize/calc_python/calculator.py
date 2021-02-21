@@ -11,9 +11,8 @@ class Calculator:
     def div(self,a,b):
         if b==0:
             return "division by zero"
-        elif not isinstance(a,int) and not isinstance(a,float):
+        elif not isinstance(a,(int,float)) or not isinstance(b, (int,float)):
             return "TypeError"
-        elif not isinstance(b,int) and not isinstance(b,float):
-            return "TypeError"
+
 
         return a/b
