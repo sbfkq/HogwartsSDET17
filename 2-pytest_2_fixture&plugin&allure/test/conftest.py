@@ -2,7 +2,7 @@
 # -*- coding:utf8 -*-
 # conftest.py 文件名是固定的，不能改
 import sys
-sys.path.append('../../2-pytest_2_fixture&plugin&allure')
+sys.path.append('..')
 
 import pytest
 import yaml
