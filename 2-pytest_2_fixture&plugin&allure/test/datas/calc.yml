@@ -1,5 +1,5 @@
 add:
-  normal:
+  int:
     datas:
       - [1,1,2]
       - [1,0,1]
@@ -7,21 +7,29 @@ add:
       - [-1,1,0]
       - [-4,-4,-8]
       - [100000000000000000000,2000000000000000000000,2100000000000000000000]
-      - [ 0.1,0.1,0.2 ]
-      - [-1.1,-9,-10.1]
-      - [Harry,Poter,'HarryPoter']
-      - [True,True,2]
-      - [True,False,1]
-      - [[1,2,3],[4,5,6],[1,2,3,4,5,6]]
-    ids: ['Ints','Int&Zero','Zeroes','SumIsZero','Minuses','BigNumber','TwoFloats','TwoMinusFloat',
-          'Strs','(boolean）Trues','(boolean）True&False','Lists']
-  error:
+    ids: ['Ints','Int&Zero','Zeroes','SumIsZero','Minuses','BigNumber']
+
+  float:
+    datas:
+      - [ 0.1,0.2,0.3 ]     # python在计算浮点数时，是以二进制来存储的，0.1在二进制是无限循环；
+                            # 0.1+0.1=0.2；但，0.1+0.2会生成一个无限接近于0.3的无限循环数
+      - [ -1.1,-9,-10.1 ]
+    ids: ['Floats','TwoMinusFloat']
+
+  other:
+    datas:
+      - [ Harry,Poter,HarryPoter ]
+      - [ True,True,2 ]
+      - [ True,False,1 ]
+      - [ [ 1,2,3 ],[ 4,5,6 ],[ 1,2,3,4,5,6 ] ]
+    ids: ['Strs','(boolean)Trues','(boolean)True&False','Lists']
+
+  type_error:
     datas:
       - ['1',1,2]
-      - ['2','2','4']
       - [{'name':'lily'},{'age':18},{'name':'lily','age':18}]
       - [{1},{2},{1,2}]
-    ids: ['str和int不可相加','数字字符串相加不求和','字典不可相加','set不可相加']
+    ids: ['str和int不可相加','字典不可相加','set不可相加']
 
 div:
   int_normal:
@@ -29,19 +37,25 @@ div:
       - [100,100,1]
       - [1,1000000000,0.000000001]
       - [5,2,2.5]
-      - [4.0,4,1.0]
-      - [4.5,0.5,9]
       - [0,100,0]
       - [0,-5,0]
-      - [-1,0.1,-10]
-      - [-1,-0.1,10]
-    ids: ['int','int2','int3','float','float2','zero','minus','minus2','minus3']
+    ids: ['int','int2','int3','zero','zero2']
+
+  float_normal:
+    datas:
+      - [ 4.0,4,1.0 ]
+      - [ 4.5,0.5,9 ]
+      - [ -1,0.1,-10 ]
+      - [ -1,-0.1,10 ]
+    ids: [ 'float','float2','minus2','minus3' ]
+
   zero_div:
     datas:
       - [1,0,division by zero]
       - [-1,0,division by zero]
       - [0,0,division by zero]
-    ids: ['int','bignum','a']
+    ids: ['int','minus','zero']
+
   type_error:
     datas:
       - [div,1,TypeError]
