@@ -11,7 +11,7 @@ def get_chromedriver():
     yield driver
     driver.quit()
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='class')
 def get_chromedriver_debug():
     chrome_arg = webdriver.ChromeOptions()
     chrome_arg.debugger_address="127.0.0.1:9222"
