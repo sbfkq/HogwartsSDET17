@@ -2,7 +2,8 @@
 # -*- coding:utf8 -*-
 # conftest.py 文件名是固定的，不能改
 import sys
-sys.path.append('..')
+sys.path.append("..")
+print(sys.path)
 
 import pytest
 import yaml
@@ -17,7 +18,7 @@ def get_instance():
 
 
 def get_datas(name,type):
-    with open('datas/calc.yml') as f:
+    with open('./datas/calc.yml') as f:
         datas = yaml.safe_load(f)
     testdata = datas[name][type]['datas']
     ids = datas[name][type]['ids']
@@ -55,3 +56,4 @@ def get_div_zero_div_datas_from_fixture(request):
 @pytest.fixture(params=get_datas('div','type_error')[0],ids=get_datas('div','type_error')[1])
 def get_div_typeerror_datas_from_fixture(request):
     return request.param
+
