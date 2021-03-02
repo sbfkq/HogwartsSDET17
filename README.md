@@ -17,6 +17,8 @@
 
 ## 作业地址
 
-1. pytest测试框架作业
-1.  
+1. [pytest测试框架-参数化与数据驱动](https://github.com/sbfkq/HogwartsSDET17/1-pytest_1_parameterize)
+1. [pytest测试框架-fixture和allure](https://github.com/sbfkq/HogwartsSDET17/2-pytest_2_fixture&plugin&allure)
+1. [selenium - 复用浏览器实现企业微信登录](https://github.com/sbfkq/HogwartsSDET17/3-selenium_wechat)
+1. [selenium- 利用PO封装添加成员](https://github.com/sbfkq/HogwartsSDET17/selenium_wechat_login)
 
