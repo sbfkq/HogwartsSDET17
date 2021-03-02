@@ -62,4 +62,4 @@ class TestSelenium:
 
 
 if __name__=="__main__":
-    pytest.main(["test_selenium.py::test_cookie","-v"])
+    pytest.main(["test_address.py::test_cookie","-v"])
