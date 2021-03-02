@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selenium import webdriver
 from ..page.main_page import MainPage
@@ -26,6 +27,7 @@ def gen_id(num):
 def get_account_from_fixture(request):
     return request.param
 
+@allure.story("管理")
 class TestAddMember:
 
     def setup_class(self):
@@ -46,6 +48,7 @@ class TestAddMember:
         self.chrome_driver.quit()
         self.chrome_driver_debug.quit()
 
+    @allure.story("添加成员")
     def test_add_member(self,get_account_from_fixture):
         username = get_account_from_fixture[0]
         uid = get_account_from_fixture[1]
